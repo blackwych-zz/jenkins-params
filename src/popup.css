@@ -1,0 +1,119 @@
+/*
+ Copyright (c) 2017 Blackwych. All rights reserved.
+ Licensed under the MIT License. See LICENSE file for full license information.
+*/
+
+@charset("utf-8");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #333;
+  font-size: 13px;
+  line-height: 1.4em;
+  padding: 10px;
+}
+
+#toolbar {
+  margin-bottom: 5px;
+}
+
+a.button,
+a.button:hover,
+a.button:active {
+  background-color: #4b758b;
+  border: 1px solid #5788a1;
+  border-radius: 1px;
+  color: #eee;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 2;
+  padding: 3px 20px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  width: 100px;
+}
+
+a.button:hover,
+a.button:active {
+  background-color: #3f6275;
+}
+
+#tab {
+  display: inline-block;
+  height: 33.2px;
+  list-style-type: none;
+  margin-top: 5px;
+}
+
+#tab:after {
+  clear: both;
+  content: ".";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+#tab > li {
+  float: left;
+  margin-left: 3px;
+}
+
+#tab > li:first-child {
+  margin-left: 15px;
+}
+
+#tab > li > a,
+#tab > li > a:hover,
+#tab > li > a:active {
+  border: 1px solid #f0f0f0;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  color: #999;
+  display: inline-block;
+  font-weight: normal;
+  padding: 7px 0;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  width: 100px;
+}
+
+#tab > li > a:hover,
+#tab > li > a:active,
+#tab > li > a.selected {
+  background-color: #eee;
+  color: #000;
+}
+
+#tab > li > a.selected {
+  font-weight: bold;
+}
+
+#container {
+  height: 235px;
+  position: relative;
+  width: 380px;
+}
+
+.result {
+  display: none;
+  font-family: monospace;
+  height: 235px;
+  left: 0;
+  overflow: scroll;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  width: 380px;
+}
+
+.result.selected {
+  display: block;
+}
