@@ -1,7 +1,7 @@
 Jenkins Job Parameter Summary
 =============================
 
-Firefox addon to make a summary of Jenkins job parameters for easy copy-and-paste
+Browser extension to make a summary of Jenkins job parameters for easy copy-and-paste
 
 
 Usage
