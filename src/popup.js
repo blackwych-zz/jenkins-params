@@ -77,8 +77,9 @@ document.querySelectorAll('#tab > li > a').forEach(function (tab) {
 
 browser.runtime.onMessage.addListener(updateResult);
 
+browser.tabs.executeScript(null, {file: '/browser-polyfill.min.js'});
 browser.tabs.executeScript(null, {file: '/capture.js'}).then(function () {
-  browser.tabs.query({active: true, currentWindow: true}, function (tabs) {
+  browser.tabs.query({active: true, currentWindow: true}).then(function (tabs) {
     browser.tabs.sendMessage(tabs[0].id, null);
   });
 });
