@@ -3,31 +3,26 @@
 // Licensed under the MIT License. See LICENSE file for full license information.
 //
 
-function addKeyValue(params, e) {
-  var key = e.previousElementSibling.textContent;
-  var value = null;
+function detectKey(e) {
+  return e.previousElementSibling.textContent || e.querySelector('label').textContent;
+}
 
+function detectValue(e) {
   var input = e.querySelector('input:not([type="hidden"]),textarea,select');
   switch (input.tagName.toLowerCase()) {
   case 'input':
     switch (input.type.toLowerCase()) {
     case 'checkbox':
-      value = input.checked ? 'true' : 'false';
-      break;
+      return input.checked ? 'true' : 'false';
     default:
-      value = input.value;
+      return input.value;
     }
     break;
   case 'textarea':
   case 'select':
-    value = input.value;
-    break;
+    return input.value;
   default:
-    value = '(unknown)';
-  }
-
-  if (key !== null && value !== null) {
-    params[key] = value;
+    return '(unknown)';
   }
 }
 
@@ -44,7 +39,10 @@ function capture() {
 
   var params = {};
   elements.forEach(function (e) {
-    addKeyValue(params, e);
+    var key = detectKey(e), value = detectValue(e);
+    if (key !== null && value !== null) {
+      params[key] = value;
+    }
   });
 
   var data = {
