@@ -10,9 +10,16 @@ if [[ ! -d "${dir}/build" ]]; then
   echo
 fi
 
-echo 'Create jenkins-params.xpi...'
+echo
+echo 'Create jenkins-params.xpi (for Firefox)...'
 cd "${dir}/src"
 zip -r ../build/jenkins-params.xpi *
+echo 'Done'
+
+echo
+echo 'Create jenkins-params.zip (for Chrome)...'
+cd "${dir}/src"
+zip -r ../build/jenkins-params.zip *
 echo 'Done'
 
 echo
