@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Jenkins Job Parameter Summary",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Browser extension to make a summary of Jenkins job parameters for easy copy-and-paste",
   "icons": {
     "48": "icons/jenkins-48.png"
