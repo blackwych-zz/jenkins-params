@@ -4,7 +4,8 @@
 //
 
 function detectKey(e) {
-  return e.previousElementSibling.textContent || e.querySelector('label').textContent;
+  // null check because previousElementSibling in latest jenkins may be null
+  return e.previousElementSibling === null ? e.querySelector('label').textContent : e.previousElementSibling.textContent;
 }
 
 function detectValue(e) {
